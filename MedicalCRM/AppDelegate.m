@@ -7,9 +7,32 @@
 //
 
 #import "AppDelegate.h"
+#import "RootTabbarController.h"
+#import "MMZCViewController.h"
+#import <UIKit/UIKit.h>
+#import <RongIMLib/RongIMLib.h>
+#import "ViewController.h"
+#import <RongIMKit/RongIMKit.h>
+#import <BaiduMapAPI_Base/BMKBaseComponent.h>//引入base相关所有的头文件
 
+#import <BaiduMapAPI_Map/BMKMapComponent.h>//引入地图功能所有的头文件
+
+#import <BaiduMapAPI_Search/BMKSearchComponent.h>//引入检索功能所有的头文件
+
+#import <BaiduMapAPI_Cloud/BMKCloudSearchComponent.h>//引入云检索功能所有的头文件
+
+#import <BaiduMapAPI_Location/BMKLocationComponent.h>//引入定位功能所有的头文件
+
+#import <BaiduMapAPI_Utils/BMKUtilsComponent.h>//引入计算工具所有的头文件
+
+#import <BaiduMapAPI_Radar/BMKRadarComponent.h>//引入周边雷达功能所有的头文件
+
+#import <BaiduMapAPI_Map/BMKMapView.h>//只引入所需的单个头文件
+#define RONGCLOUD_IM_APPKEY @"c9kqb3rdklm3j" //请换成您的appkey
 @interface AppDelegate ()
-
+{
+    BMKMapManager* _mapManager;
+}
 @end
 
 @implementation AppDelegate
@@ -17,6 +40,94 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+//        RootTabbarController *tabbatCtl = [[RootTabbarController alloc] init];
+        MMZCViewController *tabbatCtl = [[MMZCViewController alloc] init];
+        //    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:tabbatCtl];
+        self.window.rootViewController = tabbatCtl;
+//    MMZCViewController *login=[[MMZCViewController alloc]init];
+//    UINavigationController *nav=[[UINavigationController alloc]initWithRootViewController:login];
+    self.window.rootViewController=tabbatCtl;
+//    NSDictionary *attributes=[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,nil];
+//    [nav.navigationBar setTitleTextAttributes:attributes];
+    [self.window makeKeyAndVisible];
+    
+    //初始化融云SDK
+    [[RCIM sharedRCIM] initWithAppKey:RONGCLOUD_IM_APPKEY];
+    
+    /**
+     * 推送处理1
+     */
+    if ([application
+         respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        //注册推送, iOS 8
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings
+                                                settingsForTypes:(UIUserNotificationTypeBadge |
+                                                                  UIUserNotificationTypeSound |
+                                                                  UIUserNotificationTypeAlert)
+                                                categories:nil];
+        [application registerUserNotificationSettings:settings];
+    } else {
+        UIRemoteNotificationType myTypes = UIRemoteNotificationTypeBadge |
+        UIRemoteNotificationTypeAlert |
+        UIRemoteNotificationTypeSound;
+        [application registerForRemoteNotificationTypes:myTypes];
+    }
+    
+    // 初始化 ViewController。
+//    ViewController *viewController = [[ViewController alloc]initWithNibName:nil bundle:nil];
+//    
+//    // 初始化 UINavigationController。
+//    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:viewController];
+//    
+//    // 设置背景颜色为黑色。
+//    [nav.navigationBar setBackgroundColor:[UIColor blackColor]];
+    
+    // 初始化 rootViewController。
+//    self.window.rootViewController = nav;
+    
+//    self.window.backgroundColor = [UIColor whiteColor];
+//    [self.window makeKeyAndVisible];
+//    UIFont *font = [UIFont systemFontOfSize:19.f];
+//    NSDictionary *textAttributes = @{
+//                                     NSFontAttributeName : font,
+//                                     NSForegroundColorAttributeName : [UIColor whiteColor]
+//                                     };
+//    [[UINavigationBar appearance] setTitleTextAttributes:textAttributes];
+//    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+//    [[UINavigationBar appearance]
+//     setBarTintColor:[UIColor colorWithRed:(1 / 255.0f) green:(149 / 255.0f) blue:(255 / 255.0f) alpha:1]];
+    //登录融云服务器,开始阶段可以先从融云API调试网站获取，之后token需要通过服务器到融云服务器取。
+    NSString*token=@"8IQEeIwNCfeTBXXkPrTXX8fKDSmkBZ3iMfp4c76/dYLk14c9moC0ZyGxWJnAWQ+DQdZDznXAxzg=";
+    [[RCIM sharedRCIM] connectWithToken:token success:^(NSString *userId) {
+        //设置用户信息提供者,页面展现的用户头像及昵称都会从此代理取
+        [[RCIM sharedRCIM] setUserInfoDataSource:self];
+        NSLog(@"Login successfully with userId: %@.", userId);
+        dispatch_async(dispatch_get_main_queue(), ^{
+
+        });
+    } error:^(RCConnectErrorCode status) {
+        NSLog(@"login error status: %ld.", (long)status);
+    } tokenIncorrect:^{
+        NSLog(@"token 无效 ，请确保生成token 使用的appkey 和初始化时的appkey 一致");
+    }];
+    
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(didReceiveMessageNotification:)
+     name:RCKitDispatchMessageNotification
+     object:nil];
+    [[RCIM sharedRCIM] setConnectionStatusDelegate:self];
+    
+    // 百度地图
+    // 要使用百度地图，请先启动BaiduMapManager
+    _mapManager = [[BMKMapManager alloc]init];
+    // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
+    BOOL ret = [_mapManager start:@"R0k5LhRonh8mr7rKmsGHuIVebgURvO7R"  generalDelegate:nil];
+    if (!ret) {
+        NSLog(@"manager start failed!");
+    }
     return YES;
 }
 
@@ -41,5 +152,50 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+/**
+ *  将得到的devicetoken 传给融云用于离线状态接收push ，您的app后台要上传推送证书
+ *
+ *  @param application <#application description#>
+ *  @param deviceToken <#deviceToken description#>
+ */
+- (void)application:(UIApplication *)application
+didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    NSString *token =
+    [[[[deviceToken description] stringByReplacingOccurrencesOfString:@"<"
+                                                           withString:@""]
+      stringByReplacingOccurrencesOfString:@">"
+      withString:@""]
+     stringByReplacingOccurrencesOfString:@" "
+     withString:@""];
+    
+    [[RCIMClient sharedRCIMClient] setDeviceToken:token];
+}
 
+
+/**
+ *  网络状态变化。
+ *
+ *  @param status 网络状态。
+ */
+- (void)onRCIMConnectionStatusChanged:(RCConnectionStatus)status {
+    if (status == ConnectionStatus_KICKED_OFFLINE_BY_OTHER_CLIENT) {
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"提示"
+                              message:@"您"
+                              @"的帐号在别的设备上登录，您被迫下线！"
+                              delegate:nil
+                              cancelButtonTitle:@"知道了"
+                              otherButtonTitles:nil, nil];
+        [alert show];
+//        ViewController *loginVC = [[ViewController alloc] init];
+//        UINavigationController *_navi =
+//        [[UINavigationController alloc] initWithRootViewController:loginVC];
+//        self.window.rootViewController = _navi;
+    }
+}
+
+- (void)didReceiveMessageNotification:(NSNotification *)notification {
+    [UIApplication sharedApplication].applicationIconBadgeNumber =
+    [UIApplication sharedApplication].applicationIconBadgeNumber + 1;
+}
 @end

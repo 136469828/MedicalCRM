@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="99" id="KGk-i7-Jjw" customClass="HistoryCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="89.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mapTest.png" translatesAutoresizingMaskIntoConstraints="NO" id="fwQ-Su-MdQ">
+                        <rect key="frame" x="8" y="5" width="120" height="79.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="120" id="GRJ-Wq-8hm"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="客户名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4N-fG-GgX">
+                        <rect key="frame" x="136" y="5" width="176" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="拜访人" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUN-iK-wvV">
+                        <rect key="frame" x="136" y="68.5" width="39" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2010-10-10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ak1-rR-4Cx">
+                        <rect key="frame" x="251" y="73" width="61" height="13.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地址" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICm-Vy-zj6">
+                        <rect key="frame" x="136" y="29" width="176" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="fwQ-Su-MdQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="280-UH-wul"/>
+                    <constraint firstItem="oUN-iK-wvV" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ICm-Vy-zj6" secondAttribute="bottom" constant="5" id="7RE-su-XRW"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="o4N-fG-GgX" secondAttribute="trailing" id="B5j-LP-XMb"/>
+                    <constraint firstItem="oUN-iK-wvV" firstAttribute="bottom" secondItem="fwQ-Su-MdQ" secondAttribute="bottom" id="E5I-kN-Qx8"/>
+                    <constraint firstItem="o4N-fG-GgX" firstAttribute="leading" secondItem="fwQ-Su-MdQ" secondAttribute="trailing" constant="8" id="Ha2-dS-rvh"/>
+                    <constraint firstItem="oUN-iK-wvV" firstAttribute="leading" secondItem="fwQ-Su-MdQ" secondAttribute="trailing" constant="8" id="HgQ-AU-5Ac"/>
+                    <constraint firstItem="fwQ-Su-MdQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="QFi-Ue-rha"/>
+                    <constraint firstAttribute="bottom" secondItem="Ak1-rR-4Cx" secondAttribute="bottom" constant="3" id="QtJ-fo-XdA"/>
+                    <constraint firstItem="o4N-fG-GgX" firstAttribute="top" secondItem="fwQ-Su-MdQ" secondAttribute="top" id="SDp-1D-191"/>
+                    <constraint firstItem="ICm-Vy-zj6" firstAttribute="top" secondItem="o4N-fG-GgX" secondAttribute="bottom" constant="6" id="XMC-5o-T3A"/>
+                    <constraint firstItem="ICm-Vy-zj6" firstAttribute="leading" secondItem="o4N-fG-GgX" secondAttribute="leading" id="XMT-qZ-J13"/>
+                    <constraint firstItem="ICm-Vy-zj6" firstAttribute="trailing" secondItem="o4N-fG-GgX" secondAttribute="trailing" id="XbV-QD-QdM"/>
+                    <constraint firstAttribute="trailing" secondItem="Ak1-rR-4Cx" secondAttribute="trailing" constant="8" id="e4r-vQ-blW"/>
+                    <constraint firstAttribute="bottom" secondItem="fwQ-Su-MdQ" secondAttribute="bottom" constant="5" id="eNx-NM-tms"/>
+                    <constraint firstItem="Ak1-rR-4Cx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="oUN-iK-wvV" secondAttribute="trailing" constant="5" id="kiV-iE-KUP"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="addressLab" destination="ICm-Vy-zj6" id="uRv-qU-fBN"/>
+                <outlet property="customerLab" destination="o4N-fG-GgX" id="NUM-BG-1zK"/>
+                <outlet property="imgV" destination="fwQ-Su-MdQ" id="Y05-qR-Tge"/>
+                <outlet property="nameLab" destination="oUN-iK-wvV" id="6Nl-ys-0cS"/>
+                <outlet property="timeLab" destination="Ak1-rR-4Cx" id="FdI-nY-vJB"/>
+            </connections>
+            <point key="canvasLocation" x="355" y="356.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="mapTest.png" width="410" height="262"/>
+    </resources>
+</document>

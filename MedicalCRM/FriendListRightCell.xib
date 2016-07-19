@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="95" id="KGk-i7-Jjw" customClass="FriendListRightCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="f5edb4e3f147b744fddb560f043b600f.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="wQx-21-2fD">
+                        <rect key="frame" x="8" y="8" width="36" height="37"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="36" id="zdJ-Qf-0d5"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="安卓测试小王" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOF-YU-6Lr">
+                        <rect key="frame" x="52" y="17.5" width="260" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4KD-zw-fHN">
+                        <rect key="frame" x="287" y="17" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="YM9-7b-lv2"/>
+                            <constraint firstAttribute="height" constant="20" id="umx-jF-sEj"/>
+                        </constraints>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" backgroundImage="score_icon_no_select.png">
+                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="lOF-YU-6Lr" secondAttribute="trailing" id="6iW-7E-iXz"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="4KD-zw-fHN" secondAttribute="trailing" constant="5" id="8Qa-gx-V78"/>
+                    <constraint firstItem="4KD-zw-fHN" firstAttribute="centerY" secondItem="lOF-YU-6Lr" secondAttribute="centerY" id="BaU-hX-gdz"/>
+                    <constraint firstItem="lOF-YU-6Lr" firstAttribute="centerY" secondItem="wQx-21-2fD" secondAttribute="centerY" id="MqF-6x-yJh"/>
+                    <constraint firstItem="wQx-21-2fD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Pes-n7-TIE"/>
+                    <constraint firstItem="lOF-YU-6Lr" firstAttribute="leading" secondItem="wQx-21-2fD" secondAttribute="trailing" constant="8" id="QKv-IH-dd7"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="wQx-21-2fD" secondAttribute="bottom" constant="-3" id="ixI-7M-wwZ"/>
+                    <constraint firstItem="wQx-21-2fD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="nrf-4f-e4d"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="nameLab" destination="lOF-YU-6Lr" id="QeC-rg-z2z"/>
+                <outlet property="selectedBtn" destination="4KD-zw-fHN" id="Hlv-qo-joS"/>
+            </connections>
+            <point key="canvasLocation" x="367" y="216"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="f5edb4e3f147b744fddb560f043b600f.jpeg" width="200" height="200"/>
+        <image name="score_icon_no_select.png" width="40" height="40"/>
+    </resources>
+</document>
