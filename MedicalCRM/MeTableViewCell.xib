@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,43 +12,42 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
+                <frame key="frameInset" width="320" height="79"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="梁健聪" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bDQ-Mc-mcN">
-                        <rect key="frame" x="81" y="8" width="231" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6v2-PI-rvG">
-                        <rect key="frame" x="81" y="32" width="26" height="16"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6v2-PI-rvG">
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="职务" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njM-Da-65Q">
-                        <rect key="frame" x="81" y="55" width="26" height="16"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="部门:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njM-Da-65Q">
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="f5edb4e3f147b744fddb560f043b600f.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="lz2-vL-dmu">
-                        <rect key="frame" x="8" y="8" width="65" height="63.5"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lz2-vL-dmu">
                         <constraints>
                             <constraint firstAttribute="width" constant="65" id="kqg-Le-Pci"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18575523716" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FO0-Io-VGj">
-                        <rect key="frame" x="112" y="32" width="83" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开发工程师" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLm-f3-FBL">
-                        <rect key="frame" x="112" y="54.5" width="65" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="梁健聪" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPN-H7-eyX">
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -56,7 +56,7 @@
                     <constraint firstItem="bDQ-Mc-mcN" firstAttribute="leading" secondItem="lz2-vL-dmu" secondAttribute="trailing" constant="8" id="9gy-db-51N"/>
                     <constraint firstItem="bDQ-Mc-mcN" firstAttribute="top" secondItem="lz2-vL-dmu" secondAttribute="top" id="BWV-FK-Egf"/>
                     <constraint firstItem="njM-Da-65Q" firstAttribute="top" secondItem="6v2-PI-rvG" secondAttribute="bottom" constant="7.5" id="M54-8p-x2b"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="bDQ-Mc-mcN" secondAttribute="trailing" id="V9p-Ym-nX0"/>
+                    <constraint firstItem="cPN-H7-eyX" firstAttribute="leading" secondItem="bDQ-Mc-mcN" secondAttribute="trailing" constant="18" id="UDj-dP-cHc"/>
                     <constraint firstItem="yLm-f3-FBL" firstAttribute="leading" secondItem="njM-Da-65Q" secondAttribute="trailing" constant="5" id="VkS-UP-52u"/>
                     <constraint firstItem="FO0-Io-VGj" firstAttribute="leading" secondItem="6v2-PI-rvG" secondAttribute="trailing" constant="5" id="YOl-ca-fRS"/>
                     <constraint firstItem="6v2-PI-rvG" firstAttribute="top" secondItem="bDQ-Mc-mcN" secondAttribute="bottom" constant="6" id="YWl-Dw-2zy"/>
@@ -65,18 +65,17 @@
                     <constraint firstItem="lz2-vL-dmu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="eyu-94-UOE"/>
                     <constraint firstItem="njM-Da-65Q" firstAttribute="leading" secondItem="6v2-PI-rvG" secondAttribute="leading" id="ibG-2C-Mkp"/>
                     <constraint firstItem="FO0-Io-VGj" firstAttribute="centerY" secondItem="6v2-PI-rvG" secondAttribute="centerY" id="qXf-Bm-3V3"/>
+                    <constraint firstItem="cPN-H7-eyX" firstAttribute="centerY" secondItem="bDQ-Mc-mcN" secondAttribute="centerY" id="u4d-DT-g8y"/>
                     <constraint firstItem="yLm-f3-FBL" firstAttribute="centerY" secondItem="njM-Da-65Q" secondAttribute="centerY" id="xiZ-Cl-Sh9"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="imgV" destination="lz2-vL-dmu" id="Jnh-o9-rdR"/>
                 <outlet property="nameLab" destination="bDQ-Mc-mcN" id="6EE-n3-Iqq"/>
+                <outlet property="parkMentLab" destination="yLm-f3-FBL" id="bH7-AO-kl2"/>
                 <outlet property="phoneLab" destination="FO0-Io-VGj" id="Wn0-Pu-Shg"/>
-                <outlet property="zhiwuLab" destination="yLm-f3-FBL" id="VYo-uc-mEM"/>
+                <outlet property="zhiwuLab" destination="cPN-H7-eyX" id="hd0-ZU-IbD"/>
             </connections>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="f5edb4e3f147b744fddb560f043b600f.jpeg" width="200" height="200"/>
-    </resources>
 </document>

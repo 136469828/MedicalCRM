@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ProjectInfoController : UIViewController
-
+@property (nonatomic, assign) NSInteger ID;
+@property (nonatomic, assign) BOOL isPublic;
 @end

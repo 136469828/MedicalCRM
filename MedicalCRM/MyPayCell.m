@@ -7,6 +7,7 @@
 //
 
 #import "MyPayCell.h"
+#import "PayListModel.h"
 
 @implementation MyPayCell
 
@@ -23,6 +24,7 @@
     {
         cell = [[[NSBundle mainBundle] loadNibNamed:@"MyPayCell" owner:self options:nil] firstObject];
     }
+
     cell.selectionStyle = UITableViewCellAccessoryNone;
     return cell;
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -15,25 +16,25 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXS-Ab-sQ3">
-                        <rect key="frame" x="38" y="13" width="274" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <rect key="frame" x="44" y="14" width="276" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chat_btn_announce.png" translatesAutoresizingMaskIntoConstraints="NO" id="34X-IK-wxt">
-                        <rect key="frame" x="8" y="11.5" width="20" height="20"/>
+                        <rect key="frame" x="8" y="8" width="28" height="28"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="20" id="cua-hm-2NG"/>
-                            <constraint firstAttribute="width" constant="20" id="vll-BO-7Qd"/>
+                            <constraint firstAttribute="height" constant="28" id="elt-y0-vE5"/>
+                            <constraint firstAttribute="width" constant="28" id="hFO-xf-mEF"/>
                         </constraints>
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="leadingMargin" secondItem="34X-IK-wxt" secondAttribute="leading" id="56X-oN-X0i"/>
-                    <constraint firstItem="34X-IK-wxt" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="IhZ-Zi-eGM"/>
-                    <constraint firstItem="kXS-Ab-sQ3" firstAttribute="leading" secondItem="34X-IK-wxt" secondAttribute="trailing" constant="10" id="cMN-sn-asP"/>
-                    <constraint firstItem="kXS-Ab-sQ3" firstAttribute="centerY" secondItem="34X-IK-wxt" secondAttribute="centerY" id="cUI-DF-Z0B"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="kXS-Ab-sQ3" secondAttribute="trailing" id="gUV-vJ-L09"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="34X-IK-wxt" secondAttribute="leading" id="2A2-qs-5tU"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="kXS-Ab-sQ3" secondAttribute="trailing" constant="-8" id="GSD-km-rkB"/>
+                    <constraint firstItem="kXS-Ab-sQ3" firstAttribute="centerY" secondItem="34X-IK-wxt" secondAttribute="centerY" id="MxG-ET-dg6"/>
+                    <constraint firstItem="34X-IK-wxt" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="WzJ-Bv-ikR"/>
+                    <constraint firstItem="kXS-Ab-sQ3" firstAttribute="leading" secondItem="34X-IK-wxt" secondAttribute="trailing" constant="8" id="u3j-nj-fZd"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

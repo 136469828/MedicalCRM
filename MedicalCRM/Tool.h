@@ -36,7 +36,12 @@
 #define CURRENT_LANGUAGE            ([[NSLocale preferredLanguages] objectAtIndex:0])
 #define IS_LANGUAGE(l)              [CURRENT_LANGUAGE hasPrefix:l]
 #define IS_LANGUAGE_EN              IS_LANGUAGE(@"en")
-
+// 日志输出
+#ifdef DEBUG
+#define JCKLog(...) NSLog(__VA_ARGS__)
+#else
+#define JCKLog(...)
+#endif
 
 // Font
 #define FONT_SOFIA_MEDIUM(s)        [UIFont fontWithName:@"SofiaProSoft-Medium" size:s]
@@ -54,9 +59,8 @@
 // GCD
 #define GCD_GLOBAL(block)           dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block)
 #define GCD_MAIN(block)             dispatch_async(dispatch_get_main_queue(), block)
-
 // 网络请求
 //#define ServerAddressURL  @"http://192.168.0.105:88/"
-#define ServerAddressURL  @"http://115.28.180.26:98/"
-//#define ServerAddressURL  @"http://beacon.meidp.com:98/help/"
+//#define ServerAddressURL  @"http://115.28.180.26:98/"
+#define ServerAddressURL  @"http://beaconapi.meidp.com/"
 #endif /* tool_h */

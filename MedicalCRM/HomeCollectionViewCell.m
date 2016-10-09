@@ -1,0 +1,17 @@
+//
+//  HomeCollectionViewCell.m
+//  MedicalCRM
+//
+//  Created by admin on 16/7/22.
+//  Copyright © 2016年 JCK. All rights reserved.
+//
+
+#import "HomeCollectionViewCell.h"
+
+@implementation HomeCollectionViewCell
+
+- (void)awakeFromNib {
+    // Initialization code
+}
+
+@end

@@ -15,4 +15,5 @@
 @property (nonatomic, copy) NSString *Sex; //
 @property (nonatomic, copy) NSString *LinkManName; // 联系人名字
 @property (nonatomic, copy) NSString *Important; // 重视程度
+@property (nonatomic, copy) NSString *WorkTel;
 @end

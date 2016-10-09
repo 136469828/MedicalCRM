@@ -11,4 +11,5 @@
 @interface CustlinkmanlistViewController : UIViewController
 @property (nonatomic, assign) NSInteger ID;
 @property (nonatomic, copy) NSString *custom;
+@property (nonatomic, copy) NSString *customNo;
 @end

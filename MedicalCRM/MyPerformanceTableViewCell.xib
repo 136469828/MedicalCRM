@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="148" id="KGk-i7-Jjw" customClass="MyPerformanceTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="148"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="147.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="梁健聪(市场1部)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXT-lo-zs7">
+                        <rect key="frame" x="8" y="8" width="95" height="16"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="职务: 部门经理" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHg-FM-U8s">
+                        <rect key="frame" x="226" y="8" width="85.5" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="申报项目数: 50个" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b58-Db-1FQ">
+                        <rect key="frame" x="8" y="32" width="101.5" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已结项目数: 40个" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KpN-R6-5EH">
+                        <rect key="frame" x="210" y="32" width="102" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="项目总费用: 100,000,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZhS-kW-jcX">
+                        <rect key="frame" x="8" y="53" width="141" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="项目已报销: 20,000,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAL-79-I9b">
+                        <rect key="frame" x="8" y="95" width="134.5" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="项目起止时间: 2016-01-01 ~ 2016-08-01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kb9-g9-0q1">
+                        <rect key="frame" x="8" y="118" width="243.5" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="项目已收款: 40,000,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K6V-C8-qS1">
+                        <rect key="frame" x="8" y="74" width="135" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="b58-Db-1FQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="1cY-eQ-lug"/>
+                    <constraint firstItem="pAL-79-I9b" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="1rf-bg-TOK"/>
+                    <constraint firstItem="b58-Db-1FQ" firstAttribute="top" secondItem="hXT-lo-zs7" secondAttribute="bottom" constant="8" id="3LN-3V-HA5"/>
+                    <constraint firstItem="LHg-FM-U8s" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="3v4-bc-O2M"/>
+                    <constraint firstItem="Kb9-g9-0q1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="6Il-ca-PXC"/>
+                    <constraint firstItem="Kb9-g9-0q1" firstAttribute="top" secondItem="pAL-79-I9b" secondAttribute="bottom" constant="7" id="8sx-5D-K4a"/>
+                    <constraint firstItem="K6V-C8-qS1" firstAttribute="top" secondItem="ZhS-kW-jcX" secondAttribute="bottom" constant="5" id="9oF-6H-deR"/>
+                    <constraint firstItem="KpN-R6-5EH" firstAttribute="top" secondItem="LHg-FM-U8s" secondAttribute="bottom" constant="8" id="AFj-14-efn"/>
+                    <constraint firstItem="ZhS-kW-jcX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="BZd-2x-1Uh"/>
+                    <constraint firstItem="hXT-lo-zs7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="KWd-Bd-gdI"/>
+                    <constraint firstItem="LHg-FM-U8s" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="OMc-V5-aSl"/>
+                    <constraint firstItem="KpN-R6-5EH" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="Ye1-Mw-f8i"/>
+                    <constraint firstItem="ZhS-kW-jcX" firstAttribute="top" secondItem="b58-Db-1FQ" secondAttribute="bottom" constant="5" id="Zcg-qh-gOY"/>
+                    <constraint firstItem="pAL-79-I9b" firstAttribute="top" secondItem="K6V-C8-qS1" secondAttribute="bottom" constant="5" id="aDb-xL-7za"/>
+                    <constraint firstItem="hXT-lo-zs7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="gsP-A5-l2U"/>
+                    <constraint firstItem="K6V-C8-qS1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="vxb-uI-bCt"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="countLab" destination="KpN-R6-5EH" id="yis-H5-HGA"/>
+                <outlet property="namelab" destination="hXT-lo-zs7" id="ugQ-g7-d9T"/>
+                <outlet property="titmeLab" destination="Kb9-g9-0q1" id="Mko-UA-emM"/>
+                <outlet property="totlePrice" destination="ZhS-kW-jcX" id="svW-z9-eR7"/>
+            </connections>
+            <point key="canvasLocation" x="340" y="302"/>
+        </tableViewCell>
+    </objects>
+</document>

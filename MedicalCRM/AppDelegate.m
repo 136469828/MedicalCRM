@@ -28,7 +28,9 @@
 #import <BaiduMapAPI_Radar/BMKRadarComponent.h>//引入周边雷达功能所有的头文件
 
 #import <BaiduMapAPI_Map/BMKMapView.h>//只引入所需的单个头文件
-#define RONGCLOUD_IM_APPKEY @"c9kqb3rdklm3j" //请换成您的appkey
+#import "JPUSHService.h"
+#define RONGCLOUD_IM_APPKEY @"6tnym1brnec17" //请换成您的appkey
+#import "NetManger.h"
 @interface AppDelegate ()
 {
     BMKMapManager* _mapManager;
@@ -41,16 +43,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+
     self.window.backgroundColor = [UIColor whiteColor];
-//        RootTabbarController *tabbatCtl = [[RootTabbarController alloc] init];
-        MMZCViewController *tabbatCtl = [[MMZCViewController alloc] init];
-        //    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:tabbatCtl];
-        self.window.rootViewController = tabbatCtl;
-//    MMZCViewController *login=[[MMZCViewController alloc]init];
-//    UINavigationController *nav=[[UINavigationController alloc]initWithRootViewController:login];
+    MMZCViewController *tabbatCtl = [[MMZCViewController alloc] init];
+    self.window.rootViewController = tabbatCtl;
     self.window.rootViewController=tabbatCtl;
-//    NSDictionary *attributes=[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,nil];
-//    [nav.navigationBar setTitleTextAttributes:attributes];
     [self.window makeKeyAndVisible];
     
     //初始化融云SDK
@@ -74,44 +71,21 @@
         UIRemoteNotificationTypeSound;
         [application registerForRemoteNotificationTypes:myTypes];
     }
-    
-    // 初始化 ViewController。
-//    ViewController *viewController = [[ViewController alloc]initWithNibName:nil bundle:nil];
-//    
-//    // 初始化 UINavigationController。
-//    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:viewController];
-//    
-//    // 设置背景颜色为黑色。
-//    [nav.navigationBar setBackgroundColor:[UIColor blackColor]];
-    
-    // 初始化 rootViewController。
-//    self.window.rootViewController = nav;
-    
-//    self.window.backgroundColor = [UIColor whiteColor];
-//    [self.window makeKeyAndVisible];
-//    UIFont *font = [UIFont systemFontOfSize:19.f];
-//    NSDictionary *textAttributes = @{
-//                                     NSFontAttributeName : font,
-//                                     NSForegroundColorAttributeName : [UIColor whiteColor]
-//                                     };
-//    [[UINavigationBar appearance] setTitleTextAttributes:textAttributes];
-//    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-//    [[UINavigationBar appearance]
-//     setBarTintColor:[UIColor colorWithRed:(1 / 255.0f) green:(149 / 255.0f) blue:(255 / 255.0f) alpha:1]];
-    //登录融云服务器,开始阶段可以先从融云API调试网站获取，之后token需要通过服务器到融云服务器取。
-    NSString*token=@"8IQEeIwNCfeTBXXkPrTXX8fKDSmkBZ3iMfp4c76/dYLk14c9moC0ZyGxWJnAWQ+DQdZDznXAxzg=";
-    [[RCIM sharedRCIM] connectWithToken:token success:^(NSString *userId) {
-        //设置用户信息提供者,页面展现的用户头像及昵称都会从此代理取
-        [[RCIM sharedRCIM] setUserInfoDataSource:self];
-        NSLog(@"Login successfully with userId: %@.", userId);
-        dispatch_async(dispatch_get_main_queue(), ^{
-
-        });
-    } error:^(RCConnectErrorCode status) {
-        NSLog(@"login error status: %ld.", (long)status);
-    } tokenIncorrect:^{
-        NSLog(@"token 无效 ，请确保生成token 使用的appkey 和初始化时的appkey 一致");
-    }];
+    [JPUSHService registrationID];
+//    //登录融云服务器,开始阶段可以先从融云API调试网站获取，之后token需要通过服务器到融云服务器取。
+//    NSString*token=@"/RKe9ovnDCAqSDRz8ju/15WWa9eXtvB/MYH0YpK1Y2AS9IvuDT8GcOGvil9UpZGL2GDzvJgCerW1QLvDVKSpyg==";
+//    [[RCIM sharedRCIM] connectWithToken:token success:^(NSString *userId) {
+//        //设置用户信息提供者,页面展现的用户头像及昵称都会从此代理取
+//        [[RCIM sharedRCIM] setUserInfoDataSource:self];
+//        NSLog(@"Login successfully with userId: %@.", userId);
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//
+//        });
+//    } error:^(RCConnectErrorCode status) {
+//        NSLog(@"login error status: %ld.", (long)status);
+//    } tokenIncorrect:^{
+//        NSLog(@"token 无效 ，请确保生成token 使用的appkey 和初始化时的appkey 一致");
+//    }];
     
     [[NSNotificationCenter defaultCenter]
      addObserver:self
@@ -119,6 +93,29 @@
      name:RCKitDispatchMessageNotification
      object:nil];
     [[RCIM sharedRCIM] setConnectionStatusDelegate:self];
+    
+    // 极光推送
+    // Required
+    if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
+        //可以添加自定义categories
+        [JPUSHService registerForRemoteNotificationTypes:(UIUserNotificationTypeBadge |
+                                                          UIUserNotificationTypeSound |
+                                                          UIUserNotificationTypeAlert)
+                                              categories:nil];
+    } else {
+        //categories 必须为nil
+        [JPUSHService registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
+                                                          UIRemoteNotificationTypeSound |
+                                                          UIRemoteNotificationTypeAlert)
+                                              categories:nil];
+    }
+    
+    // Required
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"PushConfig" ofType:@"plist"];
+    NSDictionary *dic = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+    
+    [JPUSHService setupWithOption:launchOptions appKey:dic[@"APP_KEY"] channel:dic[@"CHANNEL"] apsForProduction:NO];
+
     
     // 百度地图
     // 要使用百度地图，请先启动BaiduMapManager
@@ -147,6 +144,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -167,10 +165,23 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
       withString:@""]
      stringByReplacingOccurrencesOfString:@" "
      withString:@""];
-    
+    JCKLog(@"%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"pushID"]);
     [[RCIMClient sharedRCIMClient] setDeviceToken:token];
+    
+    // Required
+    [JPUSHService registerDeviceToken:deviceToken];
+    // ＊＊＊＊＊星标1＊＊＊＊＊＊＊
+    [JPUSHService setTags:[NSSet setWithObjects:@"", nil] alias:[[NSUserDefaults standardUserDefaults] objectForKey:@"pushID"] callbackSelector:@selector(tagsAliasCallback:tags:alias:) object:self];
+    // ＊＊＊＊＊星标1＊＊＊＊＊＊＊
 }
-
+// ＊＊＊＊＊星标2＊＊＊＊＊＊＊
+-(void)tagsAliasCallback:(int)iResCode
+                    tags:(NSSet*)tags
+                   alias:(NSString*)alias
+{
+    NSLog(@"rescode: %d, \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ntags: %@, \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\nalias: %@\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n", iResCode, tags , alias);
+}
+// ＊＊＊＊＊星标2＊＊＊＊＊＊＊
 
 /**
  *  网络状态变化。
@@ -198,4 +209,25 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     [UIApplication sharedApplication].applicationIconBadgeNumber =
     [UIApplication sharedApplication].applicationIconBadgeNumber + 1;
 }
+#pragma mark - JPush
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    // Required,For systems with less than or equal to iOS6
+    [JPUSHService handleRemoteNotification:userInfo];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    // IOS 7 Support Required
+    [JPUSHService handleRemoteNotification:userInfo];
+    JCKLog(@"%@",userInfo[@"aps"][@"alert"]);
+    UIAlertView *al = [[UIAlertView alloc] initWithTitle:@"您有一条新消息" message:userInfo[@"aps"][@"alert"] delegate:self cancelButtonTitle:nil otherButtonTitles:@"确认", nil];
+//    [al show];
+    completionHandler(UIBackgroundFetchResultNewData);
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    //Optional
+    NSLog(@"did Fail To Register For Remote Notifications With Error: %@", error);
+}
+
+
 @end

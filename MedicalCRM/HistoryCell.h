@@ -14,5 +14,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *addressLab;
 @property (weak, nonatomic) IBOutlet UILabel *nameLab;
 @property (weak, nonatomic) IBOutlet UILabel *timeLab;
+@property (weak, nonatomic) IBOutlet UILabel *creatorName;
+@property (weak, nonatomic) IBOutlet UILabel *custLinkManNameLab;
+@property (weak, nonatomic) IBOutlet UILabel *priceLab;
+@property (weak, nonatomic) IBOutlet UILabel *telLab;
+@property (weak, nonatomic) IBOutlet UILabel *contextLab;
+@property (weak, nonatomic) IBOutlet UILabel *tagLab;
+
+
 + (instancetype)selectedCell:(UITableView *)tableView;
 @end

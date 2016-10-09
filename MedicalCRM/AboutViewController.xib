@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_1024.png" translatesAutoresizingMaskIntoConstraints="NO" id="gVu-HX-7Ug">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="ZFN-5h-Gnn"/>
+                        <constraint firstAttribute="height" constant="100" id="pHI-S1-Fm5"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="ZFN-5h-Gnn"/>
+                            <exclude reference="pHI-S1-Fm5"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="ZFN-5h-Gnn"/>
+                            <include reference="pHI-S1-Fm5"/>
+                        </mask>
+                    </variation>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="巨烽CRM iOS 1.02" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vO-my-1l8">
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前版本为最新版本" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11f-7U-del">
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZg-nw-1SR">
+                    <frame key="frameInset" minX="38" minY="79" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="btn:" destination="-1" eventType="touchUpInside" id="Rj7-Wp-bNo"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DownloadLink.png" translatesAutoresizingMaskIntoConstraints="NO" id="HB1-ck-fxa">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="kQm-cj-sk0"/>
+                        <constraint firstAttribute="height" constant="100" id="tLP-XU-VXA"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="kQm-cj-sk0"/>
+                            <exclude reference="tLP-XU-VXA"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="kQm-cj-sk0"/>
+                            <include reference="tLP-XU-VXA"/>
+                        </mask>
+                    </variation>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="0.92653099319999999" green="0.92861905860000005" blue="0.96048265460000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="11f-7U-del" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="6SW-o7-bjf"/>
+                <constraint firstItem="HB1-ck-fxa" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="KFD-tK-MYd"/>
+                <constraint firstItem="HB1-ck-fxa" firstAttribute="top" secondItem="11f-7U-del" secondAttribute="bottom" constant="53" id="Lbk-sj-MOY"/>
+                <constraint firstItem="8vO-my-1l8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Pog-Et-79q"/>
+                <constraint firstItem="8vO-my-1l8" firstAttribute="top" secondItem="gVu-HX-7Ug" secondAttribute="bottom" constant="30" id="Sft-vs-eEz"/>
+                <constraint firstItem="11f-7U-del" firstAttribute="top" secondItem="8vO-my-1l8" secondAttribute="bottom" constant="15" id="Ws6-bF-FgZ"/>
+                <constraint firstAttribute="trailing" secondItem="8vO-my-1l8" secondAttribute="trailing" id="Wzy-6g-Sjt"/>
+                <constraint firstItem="gVu-HX-7Ug" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="lQr-CT-aWT"/>
+                <constraint firstItem="gVu-HX-7Ug" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="mxn-bk-Mi2"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="gVu-HX-7Ug"/>
+                    <exclude reference="8vO-my-1l8"/>
+                    <exclude reference="11f-7U-del"/>
+                    <exclude reference="WZg-nw-1SR"/>
+                    <exclude reference="HB1-ck-fxa"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="6SW-o7-bjf"/>
+                    <exclude reference="Ws6-bF-FgZ"/>
+                    <exclude reference="Pog-Et-79q"/>
+                    <exclude reference="Sft-vs-eEz"/>
+                    <exclude reference="Wzy-6g-Sjt"/>
+                    <exclude reference="KFD-tK-MYd"/>
+                    <exclude reference="Lbk-sj-MOY"/>
+                    <exclude reference="lQr-CT-aWT"/>
+                    <exclude reference="mxn-bk-Mi2"/>
+                </mask>
+            </variation>
+            <variation key="widthClass=compact">
+                <mask key="subviews">
+                    <include reference="gVu-HX-7Ug"/>
+                    <include reference="8vO-my-1l8"/>
+                    <include reference="11f-7U-del"/>
+                    <include reference="WZg-nw-1SR"/>
+                    <include reference="HB1-ck-fxa"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="6SW-o7-bjf"/>
+                    <include reference="Ws6-bF-FgZ"/>
+                    <include reference="Pog-Et-79q"/>
+                    <include reference="Sft-vs-eEz"/>
+                    <include reference="Wzy-6g-Sjt"/>
+                    <include reference="KFD-tK-MYd"/>
+                    <include reference="Lbk-sj-MOY"/>
+                    <include reference="lQr-CT-aWT"/>
+                    <include reference="mxn-bk-Mi2"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+    <resources>
+        <image name="DownloadLink.png" width="496" height="502"/>
+        <image name="icon_1024.png" width="120" height="120"/>
+    </resources>
+</document>

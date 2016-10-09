@@ -13,4 +13,6 @@
 @property (nonatomic, copy) NSString *PhotoURL;
 @property (nonatomic, copy) NSString *DeptName; // 部门
 @property (nonatomic, copy) NSString *EmployeeID;
+@property (nonatomic, copy) NSString *Mobile;
+@property (nonatomic, copy) NSString *ZhiWu;
 @end

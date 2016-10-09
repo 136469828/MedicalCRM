@@ -42,7 +42,7 @@
     NSString*token=@"8IQEeIwNCfeTBXXkPrTXX8fKDSmkBZ3iMfp4c76/dYLk14c9moC0ZyGxWJnAWQ+DQdZDznXAxzg=";
     [[RCIM sharedRCIM] connectWithToken:token success:^(NSString *userId) {
         //设置用户信息提供者,页面展现的用户头像及昵称都会从此代理取
-        [[RCIM sharedRCIM] setUserInfoDataSource:self];
+//        [[RCIM sharedRCIM] setUserInfoDataSource:self];
         NSLog(@"Login successfully with userId: %@.", userId);
         dispatch_async(dispatch_get_main_queue(), ^{
             ChatListViewController *chatListViewController = [[ChatListViewController alloc]init];

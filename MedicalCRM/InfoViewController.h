@@ -10,4 +10,5 @@
 
 @interface InfoViewController : UIViewController
 @property (nonatomic, copy) NSString *imgUrl;
+@property (nonatomic, strong) NSArray *infos;
 @end

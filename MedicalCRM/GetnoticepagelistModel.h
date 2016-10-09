@@ -13,4 +13,6 @@
 @property (nonatomic, copy) NSString *NewsTitle;
 @property (nonatomic, copy) NSString *NewsContent;
 @property (nonatomic, copy) NSString *ComfirmDate;
+@property (nonatomic, copy) NSString *isRead;
+@property (nonatomic, copy) NSString *ReadCount;
 @end

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="182" id="KGk-i7-Jjw" customClass="LifeNanvgation5Cell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="182"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="181.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1、3D解剖临床应用解决方案：我有机会让这" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dna-cm-STz">
+                        <rect key="frame" x="8" y="8" width="257.5" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jTM-f1-v4T">
+                        <rect key="frame" x="269" y="7" width="42.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                    </textField>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m0f-tI-fUD">
+                        <rect key="frame" x="267" y="23" width="44.5" height="1"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="Ze8-xH-hjs"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="家医院实现销售：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tT2-lu-ucF">
+                        <rect key="frame" x="8" y="29" width="104" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Gq1-Ex-u4h">
+                        <rect key="frame" x="8" y="45" width="304" height="128.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="numberPad"/>
+                    </textView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="m0f-tI-fUD" secondAttribute="trailing" id="ObR-d0-Eig"/>
+                    <constraint firstItem="m0f-tI-fUD" firstAttribute="leading" secondItem="Dna-cm-STz" secondAttribute="trailing" constant="2" id="RtS-7F-x7q"/>
+                    <constraint firstItem="jTM-f1-v4T" firstAttribute="leading" secondItem="Dna-cm-STz" secondAttribute="trailing" constant="3.5" id="aIT-iO-cq7"/>
+                    <constraint firstItem="tT2-lu-ucF" firstAttribute="leading" secondItem="Dna-cm-STz" secondAttribute="leading" id="dRf-Ly-Lgj"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="jTM-f1-v4T" secondAttribute="trailing" constant="0.5" id="eCe-7Y-6gV"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Gq1-Ex-u4h" secondAttribute="bottom" id="eQ0-Cp-9Oh"/>
+                    <constraint firstItem="tT2-lu-ucF" firstAttribute="top" secondItem="Dna-cm-STz" secondAttribute="bottom" constant="5" id="ikd-Wu-HWG"/>
+                    <constraint firstItem="m0f-tI-fUD" firstAttribute="bottom" secondItem="Dna-cm-STz" secondAttribute="bottom" id="kQW-sf-3k3"/>
+                    <constraint firstItem="jTM-f1-v4T" firstAttribute="centerY" secondItem="Dna-cm-STz" secondAttribute="centerY" id="kkp-yf-zsj"/>
+                    <constraint firstItem="Gq1-Ex-u4h" firstAttribute="top" secondItem="tT2-lu-ucF" secondAttribute="bottom" id="mqV-bw-6E8"/>
+                    <constraint firstItem="Dna-cm-STz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="nqP-xx-wkM"/>
+                    <constraint firstItem="Gq1-Ex-u4h" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="rpC-FV-gBj"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Gq1-Ex-u4h" secondAttribute="trailing" id="tjO-el-ZFn"/>
+                    <constraint firstItem="Dna-cm-STz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="x3G-FU-v3Q"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="tf5" destination="jTM-f1-v4T" id="2DN-WK-2Ya"/>
+                <outlet property="titleLab" destination="Dna-cm-STz" id="wXO-Hf-lcP"/>
+                <outlet property="tv5" destination="Gq1-Ex-u4h" id="4Zh-gr-k81"/>
+            </connections>
+            <point key="canvasLocation" x="319" y="259"/>
+        </tableViewCell>
+    </objects>
+</document>

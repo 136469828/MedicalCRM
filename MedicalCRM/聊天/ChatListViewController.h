@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 #import <RongIMKit/RongIMKit.h>
 @interface ChatListViewController : RCConversationListViewController
-
+@property (nonatomic, assign) int isOnlyGroup;
 @end

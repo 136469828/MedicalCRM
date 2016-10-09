@@ -28,6 +28,7 @@ static KeyboardToolBar *keyboardToolBar = nil;
     if([KeyboardToolBar shareKeyboardToolBar].allRegisterTextFields == nil) {
         keyboardToolBar.allRegisterTextFields = [NSMutableDictionary dictionaryWithCapacity:10];
     }
+    keyboardToolBar.backgroundColor = [UIColor whiteColor];
     [textField setInputAccessoryView:keyboardToolBar];
     [textField addTarget:keyboardToolBar action:@selector(textFieldDidBegin:) forControlEvents:UIControlEventEditingDidBegin];
     [textField addTarget:keyboardToolBar action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];

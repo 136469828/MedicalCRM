@@ -76,7 +76,7 @@ NSString * const ID = @"cycleCell";
 - (void)initialization
 {
     _pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
-    _autoScrollTimeInterval = 2.0;
+    _autoScrollTimeInterval = 4.0;
     _titleLabelTextColor = [UIColor whiteColor];
     _titleLabelTextFont= [UIFont systemFontOfSize:14];
     _titleLabelBackgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
@@ -156,7 +156,7 @@ NSString * const ID = @"cycleCell";
     
     if (!self.backgroundImageView) {
         UIImageView *bgImageView = [UIImageView new];
-        bgImageView.contentMode = UIViewContentModeScaleAspectFill;
+        bgImageView.contentMode = UIViewContentModeScaleToFill;
         bgImageView.clipsToBounds = YES;
         [self insertSubview:bgImageView belowSubview:self.mainView];
         

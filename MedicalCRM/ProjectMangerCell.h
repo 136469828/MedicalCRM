@@ -14,5 +14,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *custorLab;
 @property (weak, nonatomic) IBOutlet UILabel *ProjectNo;
 @property (weak, nonatomic) IBOutlet UILabel *timeLab;
+@property (weak, nonatomic) IBOutlet UILabel *priceLab;
+@property (weak, nonatomic) IBOutlet UIView *bgView;
+@property (weak, nonatomic) IBOutlet UILabel *successLab;
 + (instancetype)selectedCell:(UITableView *)tableView;
 @end

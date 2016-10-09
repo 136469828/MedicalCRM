@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 @class FriendListModel;
 @interface FriendListRightCell : UITableViewCell
-@property (nonatomic, strong) FriendListModel *m_model;
-
+@property (weak, nonatomic) IBOutlet UILabel *tagLab;
+@property (weak, nonatomic) IBOutlet UIImageView *hearImg;
 @property (weak, nonatomic) IBOutlet UILabel *nameLab;
-- (void)rowSelected;
-
 @property (weak, nonatomic) IBOutlet UIButton *selectedBtn;
+
+@property (nonatomic, strong) FriendListModel *m_model;
+- (void)rowSelected;
 + (instancetype)selectedCell:(UITableView *)tableView;
 @end

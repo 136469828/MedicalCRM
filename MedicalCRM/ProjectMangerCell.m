@@ -12,6 +12,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    self.bgView.layer.cornerRadius = 2;
 }
 + (instancetype)selectedCell:(UITableView *)tableView
 {

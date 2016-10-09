@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeedbackProductController">
+            <connections>
+                <outlet property="btn" destination="yJW-m4-Eif" id="qp1-Af-pkS"/>
+                <outlet property="productBtn" destination="Kkc-nJ-K9v" id="E5m-rR-Bab"/>
+                <outlet property="textView" destination="qb2-Sg-SmD" id="WYd-em-M5g"/>
+                <outlet property="titleTextField" destination="iUX-zv-pm9" id="QIq-Ms-jD8"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入标题" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iUX-zv-pm9">
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kkc-nJ-K9v">
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="  点击选择产品">
+                        <color key="titleColor" red="0.79215686269999996" green="0.79215686269999996" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qb2-Sg-SmD">
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="82z-0I-DWW"/>
+                        <constraint firstAttribute="width" constant="384" id="nXb-1a-LyW"/>
+                    </constraints>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="82z-0I-DWW"/>
+                            <exclude reference="nXb-1a-LyW"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="82z-0I-DWW"/>
+                            <include reference="nXb-1a-LyW"/>
+                        </mask>
+                    </variation>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJW-m4-Eif">
+                    <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="提交">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.92653099319999999" green="0.92861905860000005" blue="0.96048265460000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="iUX-zv-pm9" secondAttribute="trailing" constant="8" id="2cf-fw-vDn"/>
+                <constraint firstItem="iUX-zv-pm9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="7iY-YT-Nfg"/>
+                <constraint firstAttribute="trailing" secondItem="qb2-Sg-SmD" secondAttribute="trailing" constant="8" id="CaS-nd-Wmy"/>
+                <constraint firstItem="qb2-Sg-SmD" firstAttribute="top" secondItem="Kkc-nJ-K9v" secondAttribute="bottom" constant="8" id="DWf-iq-t3H"/>
+                <constraint firstItem="qb2-Sg-SmD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="ICR-Zq-02c"/>
+                <constraint firstAttribute="trailing" secondItem="yJW-m4-Eif" secondAttribute="trailing" constant="20" id="QW0-ga-POd"/>
+                <constraint firstItem="Kkc-nJ-K9v" firstAttribute="trailing" secondItem="iUX-zv-pm9" secondAttribute="trailing" id="RyJ-NW-iZP"/>
+                <constraint firstItem="Kkc-nJ-K9v" firstAttribute="height" secondItem="iUX-zv-pm9" secondAttribute="height" id="VFU-wi-FPV"/>
+                <constraint firstItem="Kkc-nJ-K9v" firstAttribute="leading" secondItem="iUX-zv-pm9" secondAttribute="leading" id="WRZ-9a-kaV"/>
+                <constraint firstItem="Kkc-nJ-K9v" firstAttribute="top" secondItem="iUX-zv-pm9" secondAttribute="bottom" constant="8" id="cn5-1e-8Ov"/>
+                <constraint firstItem="yJW-m4-Eif" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="ti4-6z-UqY"/>
+                <constraint firstAttribute="bottom" secondItem="yJW-m4-Eif" secondAttribute="bottom" constant="40" id="yKe-Ir-D8J"/>
+                <constraint firstItem="iUX-zv-pm9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="22" id="zfc-K5-nb5"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="iUX-zv-pm9"/>
+                    <exclude reference="Kkc-nJ-K9v"/>
+                    <exclude reference="qb2-Sg-SmD"/>
+                    <exclude reference="yJW-m4-Eif"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="RyJ-NW-iZP"/>
+                    <exclude reference="VFU-wi-FPV"/>
+                    <exclude reference="WRZ-9a-kaV"/>
+                    <exclude reference="cn5-1e-8Ov"/>
+                    <exclude reference="2cf-fw-vDn"/>
+                    <exclude reference="7iY-YT-Nfg"/>
+                    <exclude reference="zfc-K5-nb5"/>
+                    <exclude reference="CaS-nd-Wmy"/>
+                    <exclude reference="DWf-iq-t3H"/>
+                    <exclude reference="ICR-Zq-02c"/>
+                    <exclude reference="QW0-ga-POd"/>
+                    <exclude reference="ti4-6z-UqY"/>
+                    <exclude reference="yKe-Ir-D8J"/>
+                </mask>
+            </variation>
+            <variation key="widthClass=compact">
+                <mask key="subviews">
+                    <include reference="iUX-zv-pm9"/>
+                    <include reference="Kkc-nJ-K9v"/>
+                    <include reference="qb2-Sg-SmD"/>
+                    <include reference="yJW-m4-Eif"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="RyJ-NW-iZP"/>
+                    <include reference="VFU-wi-FPV"/>
+                    <include reference="WRZ-9a-kaV"/>
+                    <include reference="cn5-1e-8Ov"/>
+                    <include reference="2cf-fw-vDn"/>
+                    <include reference="7iY-YT-Nfg"/>
+                    <include reference="zfc-K5-nb5"/>
+                    <include reference="CaS-nd-Wmy"/>
+                    <include reference="DWf-iq-t3H"/>
+                    <include reference="ICR-Zq-02c"/>
+                    <include reference="QW0-ga-POd"/>
+                    <include reference="ti4-6z-UqY"/>
+                    <include reference="yKe-Ir-D8J"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+</document>

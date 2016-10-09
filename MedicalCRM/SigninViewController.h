@@ -19,5 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *addressBtn;
 @property (weak, nonatomic) IBOutlet UIView *mapView;
 @property (weak, nonatomic) IBOutlet UIButton *siginBtn;
+@property (weak, nonatomic) IBOutlet UIView *topOneView;
+@property (weak, nonatomic) IBOutlet UIView *topTwoView;
 
 @end

@@ -10,15 +10,16 @@
 #import "forgetPassWardViewController.h"
 #import "AppDelegate.h"
 #import "MMZCHMViewController.h"
-#import "RootTabbarController.h"
+//#import "RootTabbarController.h"
+#import "MainTabBarController.h"
 #import "SVProgressHUD.h"
 #import "NetManger.h"
-
+#import "JPUSHService.h"
 //#import "UMSocial.h"
 //#import "UMSocialWechatHandler.h"
 //#import "UMSocialQQHandler.h"
 //#import "UMSocialSinaSSOHandler.h"
-@interface MMZCViewController ()
+@interface MMZCViewController ()<RCIMUserInfoDataSource>
 {
     UIImageView *View;
     UIView *bgView;
@@ -37,10 +38,14 @@
 @end
 
 @implementation MMZCViewController
-
+// 销毁通知中心
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 -(void)viewWillAppear:(BOOL)animated
 {
-   [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
+//   [[UINavigationBar appearance] setBarTintColor:RGB(7, 115, 226)];
+    
     self.navigationController.navigationBarHidden = YES;
     isRemenber = YES;
 }
@@ -49,64 +54,54 @@
 {
     [super viewDidLoad];
     
-    //self.view.backgroundColor=[UIColor colorWithRed:240/255.0f green:240/255.0f blue:240/255.0f alpha:1];
-    //设置NavigationBar背景颜色
-    View=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    //View.backgroundColor=[UIColor redColor];
-//    View.image=[UIImage imageNamed:@"login_Bg.jpg"];
-    View.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:View];
-    
-////    self.title=@"登陆";
-//    UIBarButtonItem *addBtn = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:@selector(clickaddBtn:)];
-//    [addBtn setImage:[UIImage imageNamed:@"leftBtn"]];
-//    [addBtn setImageInsets:UIEdgeInsetsMake(0, -15, 0, 15)];
-////    addBtn.tintColor=[UIColor colorWithRed:248/255.0f green:144/255.0f blue:34/255.0f alpha:1];
-//    [self.navigationItem setLeftBarButtonItem:addBtn];
-//
-//    UIBarButtonItem *right=[[UIBarButtonItem alloc]initWithTitle:@"注册" style:UIBarButtonItemStylePlain target:self action:@selector(zhuce)];
-//    right.tintColor=[UIColor colorWithRed:248/255.0f green:144/255.0f blue:34/255.0f alpha:1];
-//    self.navigationItem.rightBarButtonItem=right;
-   
-    //为了显示背景图片自定义navgationbar上面的三个按钮
-//    UIButton *but =[[UIButton alloc]initWithFrame:CGRectMake(5, 27, 35, 35)];
-//    [but setImage:[UIImage imageNamed:@"goback_back_orange_on"] forState:UIControlStateNormal];
-//    [but addTarget:self action:@selector(clickaddBtn:) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:but];
-    
-//    UIButton *zhuce =[[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width-60, 30, 50, 30)];
-//    [zhuce setTitle:@"注册" forState:UIControlStateNormal];
-//    [zhuce setTitleColor:[UIColor colorWithRed:248/255.0f green:144/255.0f blue:34/255.0f alpha:1] forState:UIControlStateNormal];
-//    zhuce.font=[UIFont systemFontOfSize:17];
-//    [zhuce addTarget:self action:@selector(zhuce) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:zhuce];
-    
-    
-//    UILabel *lanel=[[UILabel alloc]initWithFrame:CGRectMake((self.view.frame.size.width-30)/2, 30, 50, 30)];
-//    lanel.text=@"登录";
-//    lanel.textColor=[UIColor colorWithRed:248/255.0f green:144/255.0f blue:34/255.0f alpha:1];
-//    [self.view addSubview:lanel];
-    UIButton *userImgBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    userImgBtn.frame = CGRectMake(30,ScreenHeight*0.15, ScreenWidth-60, 50);
-//    userImgBtn.backgroundColor = [UIColor redColor];
-//    userImgBtn.layer.cornerRadius=100.0;
-    [userImgBtn setImage:[UIImage imageNamed:@"touxiang_login"] forState:UIControlStateNormal];
-    [self.view addSubview:userImgBtn];
-    
-    [self createButtons];
-    [self createImageViews];
-    [self createTextFields];
-    
-//    [self createLabel];
-    
-    // 导航栏返回btn
-    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] init];
-    self.navigationItem.backBarButtonItem = backItem;
-    //    self.navigationItem.backBarButtonItem.image = [UIImage imageNamed:@"leftBtn"];
-    backItem.title = @" ";
-    self.navigationController.navigationBar.barStyle = UIStatusBarStyleDefault;
-    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *userName = [userDefaults objectForKey:@"userName"];
+    NSString *passWord = [userDefaults objectForKey:@"passWord"];
+    if (userName.length == 0 || passWord.length == 0)
+    {
+        //设置NavigationBar背景颜色
+        View=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+        View.backgroundColor = [UIColor whiteColor];
+        [self.view addSubview:View];
+        UIImageView *bgTop = [[UIImageView alloc] initWithFrame:CGRectMake(1,30, ScreenWidth-2, 135)];
+        bgTop.image = [UIImage imageNamed:@"touxiang_login"];
+        bgTop.contentMode = UIViewContentModeScaleAspectFit;
+        [self.view addSubview:bgTop];
+        [self createButtons];
+        [self createImageViews];
+        [self createTextFields];
+        //    [self createLabel];
+        // 导航栏返回btn
+        UIBarButtonItem *backItem = [[UIBarButtonItem alloc] init];
+        self.navigationItem.backBarButtonItem = backItem;
+        //    self.navigationItem.backBarButtonItem.image = [UIImage imageNamed:@"leftBtn"];
+        backItem.title = @" ";
+        self.navigationController.navigationBar.barStyle = UIStatusBarStyleDefault;
+        [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
+        // 所属机构
+        UILabel *lb = [[UILabel alloc] initWithFrame:CGRectMake(0, ScreenHeight-30, ScreenWidth, 25)];
+        lb.text = @"巨烽大数据管理平台";
+        lb.textColor = [UIColor blackColor];
+        lb.textAlignment = NSTextAlignmentCenter;
+        lb.font = [UIFont systemFontOfSize:13];
+        [self.view addSubview:lb];
+    }
+    else
+    {
+        NSString *path = [[NSBundle mainBundle]pathForResource:@"launch"ofType:@"png"];
+        UIImage *image = [UIImage imageWithContentsOfFile:path];
+        self.view.layer.contents = (id)image.CGImage;
+        NetManger *manger = [NetManger shareInstance];
+        manger.userName = userName; manger.userPWD = passWord;
+        [manger loadData:RequestOfLogin];
+        [SVProgressHUD showWithStatus:@"正在登录"];
+    }
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loging:) name:@"login" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(errorloging) name:@"errorlogin" object:nil];
+
+
+
 }
 
 -(void)clickaddBtn:(UIButton *)button
@@ -133,10 +128,10 @@
     bgView=[[UIView alloc]initWithFrame:CGRectMake(10, ScreenHeight*0.15+60, frame.size.width-20, 100)];
     bgView.layer.cornerRadius=3.0;
     bgView.alpha=0.7;
-    bgView.backgroundColor=RGB(234, 234, 234);
+    bgView.backgroundColor=[UIColor clearColor];
     [self.view addSubview:bgView];
     
-    user=[self createTextFielfFrame:CGRectMake(60, 10, 271, 30) font:[UIFont systemFontOfSize:14] placeholder:@"手机/邮箱"];
+    user=[self createTextFielfFrame:CGRectMake(60, 10, 271, 30) font:[UIFont systemFontOfSize:14] placeholder:@"账号"];
 
     user.keyboardType=UIKeyboardTypeDefault;
     user.clearButtonMode = UITextFieldViewModeWhileEditing;
@@ -155,9 +150,10 @@
         user.text = [userDefaults objectForKey:@"userName"];
         pwd.text = [userDefaults objectForKey:@"passWord"];
     }
-    UIImageView *userImageView=[self createImageViewFrame:CGRectMake(20, 10, 25, 25) imageName:@"ic_landing_nickname" color:nil];
-    UIImageView *pwdImageView=[self createImageViewFrame:CGRectMake(20, 60, 25, 25) imageName:@"mm_normal" color:nil];
-    UIImageView *line1=[self createImageViewFrame:CGRectMake(20, 50, bgView.frame.size.width-40, 1) imageName:nil color:[UIColor lightGrayColor]];
+    UIImageView *userImageView=[self createImageViewFrame:CGRectMake(20, 15, 18, 20) imageName:@"ic_landing_nickname" color:nil];
+    UIImageView *pwdImageView=[self createImageViewFrame:CGRectMake(20, 65, 18, 20) imageName:@"mm_normal" color:nil];
+    UIImageView *line1=[self createImageViewFrame:CGRectMake(20, 50, bgView.frame.size.width-40, 1) imageName:nil color:RGB(186, 227, 255)];
+    UIImageView *line2=[self createImageViewFrame:CGRectMake(20, 105, bgView.frame.size.width-40, 1) imageName:nil color:RGB(186, 227, 255)];
     
     [bgView addSubview:user];
     [bgView addSubview:pwd];
@@ -165,6 +161,7 @@
     [bgView addSubview:userImageView];
     [bgView addSubview:pwdImageView];
     [bgView addSubview:line1];
+    [bgView addSubview:line2];
 }
 
 
@@ -207,8 +204,8 @@
 -(void)createButtons
 {
     UIButton *landBtn=[self createButtonFrame:CGRectMake(20,ScreenHeight*0.15+200, self.view.frame.size.width-40, 36) backImageName:nil title:@"登录" titleColor:[UIColor whiteColor]  font:[UIFont systemFontOfSize:19] target:self action:@selector(landClick)];
-    landBtn.backgroundColor= RGB(0, 143, 207);
-    landBtn.layer.cornerRadius=12.0f;
+    landBtn.backgroundColor= RGB(56, 173, 255);
+    landBtn.layer.cornerRadius=5.0f;
     
     UIButton *newUserBtn=[self createButtonFrame:CGRectMake(self.view.frame.size.width*0.5-85, 270, 80, 30) backImageName:nil title:@"我要注册" titleColor:RGB(39, 143, 253) font:[UIFont systemFontOfSize:17] target:self action:@selector(registration:)];
     //newUserBtn.backgroundColor=[UIColor lightGrayColor];
@@ -221,14 +218,18 @@
 //    UIButton *remberBtn=[self createButtonFrame:CGRectMake(self.view.frame.size.width*0.5-70, 305, 140, 30) backImageName:nil title:@"记住登录密码" titleColor:[UIColor whiteColor] font:[UIFont systemFontOfSize:15] target:self action:@selector(rebberBtn:)];
     UIButton *remberBtn = [UIButton buttonWithType:UIButtonTypeCustom];
 //    remberBtn.backgroundColor=[UIColor lightGrayColor];
-    remberBtn.frame = CGRectMake(self.view.frame.size.width*0.5-100, 40+ScreenWidth/3+100, 20, 20);
+    remberBtn.frame = CGRectMake(self.view.frame.size.width*0.5-100, 40+ScreenWidth/3+100, self.view.frame.size.width-2*(self.view.frame.size.width*0.5-100), 30);
     [remberBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
     [remberBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
     remberBtn.titleLabel.font = [UIFont systemFontOfSize:13];
     remberBtn.selected = YES;
     [remberBtn setTitleColor:RGB(39, 143, 253) forState:UIControlStateNormal];
-    [remberBtn setImage:[UIImage imageNamed:@"勾选框"] forState:UIControlStateNormal];
-    [remberBtn setImage:[UIImage imageNamed:@"已勾选"] forState:UIControlStateSelected];
+//    [remberBtn setImage:[UIImage imageNamed:@"勾选框"] forState:UIControlStateNormal];
+//    [remberBtn setImage:[UIImage imageNamed:@"已勾选"] forState:UIControlStateSelected];
+    UIImageView *imv = [[UIImageView alloc] initWithFrame:CGRectMake(30, 7, 15, 15)];
+    imv.image = [UIImage imageNamed:@"已勾选"];
+    imv.tag = 999;
+    [remberBtn addSubview:imv];
     [remberBtn addTarget:self action:@selector(remberAction:) forControlEvents:UIControlEventTouchDown];
     [remberBtn setTitle:@"记住登录密码" forState:UIControlStateNormal];
   
@@ -265,7 +266,7 @@
     [self.view addSubview:landBtn];
 //    [self.view addSubview:newUserBtn];
 //    [self.view addSubview:forgotPwdBtn];
-//    [self.view addSubview:remberBtn];
+    [self.view addSubview:remberBtn];
 
     
 }
@@ -429,12 +430,12 @@
         [self performSelector:@selector(dismiss) withObject:nil afterDelay:1];
         return;
     }
-    else if (pwd.text.length <5)
-    {
-        [SVProgressHUD showErrorWithStatus:@"亲,密码长度至少五位"];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1];
-        return;
-    }
+//    else if (pwd.text.length <5)
+//    {
+//        [SVProgressHUD showErrorWithStatus:@"亲,密码长度至少五位"];
+//        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1];
+//        return;
+//    }
     else
     {
         //
@@ -466,11 +467,34 @@
 #pragma mark - 判断账号密码
 - (void)loging:(NSNotification*)theObj
 {
-    RootTabbarController *rootTabbarCtr = [[RootTabbarController alloc] init];
-    [self presentViewController:rootTabbarCtr animated:YES completion:nil];
+    NSLog(@"%@",[NetManger shareInstance].rongcloudToken);
+        //登录融云服务器,开始阶段可以先从融云API调试网站获取，之后token需要通过服务器到融云服务器取。
+    NSString*token=[NetManger shareInstance].rongcloudToken;
+    //@"/RKe9ovnDCAqSDRz8ju/15WWa9eXtvB/MYH0YpK1Y2AS9IvuDT8GcOGvil9UpZGL2GDzvJgCerW1QLvDVKSpyg==";
+        [[RCIM sharedRCIM] connectWithToken:token success:^(NSString *userId) {
+            //设置用户信息提供者,页面展现的用户头像及昵称都会从此代理取
+//            [[RCIM sharedRCIM] setUserInfoDataSource:self];
+            [RCIM sharedRCIM].enablePersistentUserInfoCache = YES;
+            NSLog(@"Login successfully with userId: %@.", userId);
+            dispatch_async(dispatch_get_main_queue(), ^{
+    
+            });
+        } error:^(RCConnectErrorCode status) {
+            NSLog(@"login error status: %ld.", (long)status);
+        } tokenIncorrect:^{
+            NSLog(@"token 无效 ，请确保生成token 使用的appkey 和初始化时的appkey 一致");
+        }];
+
+//    RootTabbarController *rootTabbarCtr = [[RootTabbarController alloc] init];
+//    [self presentViewController:rootTabbarCtr animated:YES completion:nil];
     [SVProgressHUD dismiss];
+    NSUserDefaults *users = [NSUserDefaults standardUserDefaults];
+    [users setObject:[NetManger shareInstance].pushID forKey:@"pushID"];
+    MainTabBarController *rootTabbarCtr = [[MainTabBarController alloc] init];
+    [self presentViewController:rootTabbarCtr animated:YES completion:nil];
 
 }
+
 //注册
 -(void)zhuce
 {
@@ -534,16 +558,20 @@
 // 记住密码
 - (void)remberAction:(UIButton *)btn
 {
+    UIImageView *imv = (UIImageView *)[self.view viewWithTag:999];
     if (btn.selected) {
         NSLog(@"不记住密码");
         isRemenber = NO;
+        imv.image = [UIImage imageNamed:@"勾选框"];
         btn.selected = !btn.selected;
     }
     else
     {
         NSLog(@"记住密码");
         isRemenber = YES;
+        imv.image = [UIImage imageNamed:@"已勾选"];
         btn.selected = !btn.selected;
+        
     }
 }
 - (void)didReceiveMemoryWarning
@@ -555,6 +583,34 @@
 {
     [SVProgressHUD dismiss];
 }
-
+- (void)errorloging
+{
+    //设置NavigationBar背景颜色
+    View=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    View.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:View];
+    UIImageView *bgTop = [[UIImageView alloc] initWithFrame:CGRectMake(1,30, ScreenWidth-2, 135)];
+    bgTop.image = [UIImage imageNamed:@"touxiang_login"];
+    bgTop.contentMode = UIViewContentModeScaleAspectFit;
+    [self.view addSubview:bgTop];
+    [self createButtons];
+    [self createImageViews];
+    [self createTextFields];
+    //    [self createLabel];
+    // 导航栏返回btn
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] init];
+    self.navigationItem.backBarButtonItem = backItem;
+    //    self.navigationItem.backBarButtonItem.image = [UIImage imageNamed:@"leftBtn"];
+    backItem.title = @" ";
+    self.navigationController.navigationBar.barStyle = UIStatusBarStyleDefault;
+    [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
+    // 所属机构
+    UILabel *lb = [[UILabel alloc] initWithFrame:CGRectMake(0, ScreenHeight-30, ScreenWidth, 25)];
+    lb.text = @"巨烽大数据管理平台";
+    lb.textColor = [UIColor blackColor];
+    lb.textAlignment = NSTextAlignmentCenter;
+    lb.font = [UIFont systemFontOfSize:13];
+    [self.view addSubview:lb];
+}
 
 @end

@@ -23,7 +23,7 @@
 {
     _m_model = m_model;
     
-    self.nameLab.text = _m_model.m_nick;
+    self.nameLab.text = _m_model.EmployeeName;
 }
 
 

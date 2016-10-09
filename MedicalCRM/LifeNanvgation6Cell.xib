@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="795" id="KGk-i7-Jjw" customClass="LifeNanvgation6Cell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="795"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="794.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LPv-Nf-7HP">
+                        <rect key="frame" x="8" y="8" width="304" height="778.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <string key="text">★第一板块：销售CRM
+三个核心部分：
+★第一部分：个人导航
+
+★一、个人财富、事业目标：
+
+1、我2016年要在公司平台实现______万元个人财富？
+2、我未来5年要在公司平台实现______万元个人财富？
+3、我2016年要发展多大的团队？成就_____人？
+4、我未来5年要在公司平台发展多大的团队?成就_____人？
+
+★二、我的机会：
+
+1、3D解剖临床应用解决方案：我有机会让这____家医院实现销售：
+	①_____；	②_____ ……
+2、一键式医疗信息平台解决方案：我有机会让这____家医院实现销售：
+	①_____；②_____……
+3、DSA智能信号处理解决方案：我有机会让这____家医院实现销售：
+	①_____；②_____……
+4、智能影像中心解决方案：我有机会让这____家医院实现销售：
+	①_____；②_____……
+5、其他专业医疗显示解决方案：我有机会让这____家医院实现销售
+	：①_____；②_____……
+
+★三、我的行动：
+
+1、我每天拜访____家客户；
+2、我2016年总共要达到____家客户；
+3、我2016年要让___家客户成为我的一伙人合作伙伴；
+
+★四、我的预期成果：
+1、根据以上结果，我2016年总共可以完成____个项目？
+2、这些项目总共可以实现____万元销售额？
+3、我预计可以实现____万元个人成果？
+
+
+
+员工：employee
+经理：manager
+总监：majordomo总经理：president</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="LPv-Nf-7HP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="J8B-Zd-YCC"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="LPv-Nf-7HP" secondAttribute="trailing" id="cYG-uh-OaV"/>
+                    <constraint firstItem="LPv-Nf-7HP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="fLs-Dc-6ri"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="LPv-Nf-7HP" secondAttribute="bottom" id="nT4-iI-6mh"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="319" y="604.5"/>
+        </tableViewCell>
+    </objects>
+</document>

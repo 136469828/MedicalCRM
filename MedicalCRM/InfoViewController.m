@@ -20,7 +20,10 @@
 @end
 
 @implementation InfoViewController
-
+// 销毁通知中心
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -45,12 +48,12 @@
 #pragma mark -
 - (void)setTableView
 {
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight ) style:UITableViewStyleGrouped];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight -54) style:UITableViewStyleGrouped];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [_tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
     [self.view addSubview:_tableView];
-    titles = @[@"头像",@"昵称",@"职务",@"手机号码"];
+    titles = @[@"头像",@"昵称",@"部门",@"手机号码"];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -103,14 +106,14 @@
         textFiled.delegate = self;
         textFiled.font = [UIFont systemFontOfSize:15];
 //      textFiled.text = manger.userCnName;
-        textFiled.text = @"测试";
+        textFiled.text = self.infos[0];
         [cell.contentView addSubview:textFiled];
     }//用户昵称
     else if (indexPath.row == 2)
     {
         subTitleLabel.frame = CGRectMake(0, 2, ScreenWidth-10, 40);
 //        sexStr = subTitleLabel.text;
-        subTitleLabel.text = @"测试2";
+        subTitleLabel.text = self.infos[1];
         [cell.contentView addSubview:subTitleLabel];
     }// 职务
     else if (indexPath.row == 3)
@@ -121,7 +124,7 @@
         //                textFiled.layer.cornerRadius = 5;
         textFiled.delegate = self;
 //        textFiled.text = manger.userMobile;
-        textFiled.text = @"测试3";
+        textFiled.text = self.infos[2];
         textFiled.font = [UIFont systemFontOfSize:15];
         //                textFiled.layer.borderColor = [UIColor lightGrayColor].CGColor;
         [cell.contentView addSubview:textFiled];
@@ -217,7 +220,6 @@
 #pragma mark - updateInfo
 - (void)updateInfo
 {
-    
     manger.photoData = [self image2DataURL:userImage.image];
 //    NSLog(@"%@",manger.photoData);
     UITextField *textField = (UITextField *)[self.view viewWithTag:1000];

@@ -32,7 +32,7 @@
 #pragma mark -
 - (void)setTableView
 {
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight) style:UITableViewStyleGrouped];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 56, ScreenWidth, ScreenHeight-56) style:UITableViewStyleGrouped];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     //iOS 8开始的自适应高度，可以不需要实现定义高度的方法
@@ -57,7 +57,7 @@
     
     UIButton *seachBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [seachBtn setTitle:@"搜索" forState:UIControlStateNormal];
-    [seachBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [seachBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     seachBtn.titleLabel.font = [UIFont systemFontOfSize:15];
     seachBtn.frame = CGRectMake(SCREEN_WIDTH - 55, 10, 40, 20);
     //    [seachBtn addTarget:seachTextField action:@selector(seachOnSeach) forControlEvents:UIControlEventTouchDown];

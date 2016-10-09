@@ -128,7 +128,7 @@ typedef void (^handler)(NSArray<UIImage *> *selectPhotos);
     self.baseView.hidden = NO;
     [self.arraySelectPhotos removeAllObjects];
     [self.btnCamera setTitle:@"拍照" forState:UIControlStateNormal];
-    [self.btnCamera setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.btnCamera setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.collectionView setContentOffset:CGPointZero];
 }
 
@@ -273,7 +273,7 @@ typedef void (^handler)(NSArray<UIImage *> *selectPhotos);
         [self.btnCamera setTitleColor:kRGB(19, 153, 231) forState:UIControlStateNormal];
     } else {
         [self.btnCamera setTitle:@"拍照" forState:UIControlStateNormal];
-        [self.btnCamera setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [self.btnCamera setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     }
 }
 

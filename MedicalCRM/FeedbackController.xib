@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeedbackController">
+            <connections>
+                <outlet property="btn" destination="euv-DF-mCi" id="tgj-Pc-1cp"/>
+                <outlet property="textView" destination="FMh-d5-OLv" id="yJV-Tf-3Dp"/>
+                <outlet property="titleTF" destination="MA8-EC-C2S" id="hTR-LJ-dBD"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euv-DF-mCi">
+                    <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="提交">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FMh-d5-OLv">
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="EJW-rt-Sb0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="EJW-rt-Sb0"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="EJW-rt-Sb0"/>
+                        </mask>
+                    </variation>
+                </textView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入标题" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MA8-EC-C2S">
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="euv-DF-mCi" secondAttribute="trailing" constant="20" id="0ow-xF-N4A"/>
+                <constraint firstAttribute="trailing" secondItem="MA8-EC-C2S" secondAttribute="trailing" constant="8" id="36y-ai-Fpl"/>
+                <constraint firstItem="FMh-d5-OLv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="12" id="5R3-eU-Oy4"/>
+                <constraint firstItem="euv-DF-mCi" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8x6-4E-2K8"/>
+                <constraint firstItem="MA8-EC-C2S" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="MN5-xs-cme"/>
+                <constraint firstItem="MA8-EC-C2S" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="Qmp-HJ-SoP"/>
+                <constraint firstAttribute="bottom" secondItem="euv-DF-mCi" secondAttribute="bottom" constant="20" id="Rve-9n-5XT"/>
+                <constraint firstAttribute="trailing" secondItem="FMh-d5-OLv" secondAttribute="trailing" constant="14" id="ZxA-DD-ecS"/>
+                <constraint firstItem="FMh-d5-OLv" firstAttribute="top" secondItem="MA8-EC-C2S" secondAttribute="bottom" constant="16" id="dpe-VO-jJO"/>
+                <constraint firstItem="euv-DF-mCi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="hQ0-hQ-fzA"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="euv-DF-mCi"/>
+                    <exclude reference="FMh-d5-OLv"/>
+                    <exclude reference="MA8-EC-C2S"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="36y-ai-Fpl"/>
+                    <exclude reference="MN5-xs-cme"/>
+                    <exclude reference="Qmp-HJ-SoP"/>
+                    <exclude reference="0ow-xF-N4A"/>
+                    <exclude reference="8x6-4E-2K8"/>
+                    <exclude reference="Rve-9n-5XT"/>
+                    <exclude reference="hQ0-hQ-fzA"/>
+                    <exclude reference="5R3-eU-Oy4"/>
+                    <exclude reference="ZxA-DD-ecS"/>
+                    <exclude reference="dpe-VO-jJO"/>
+                </mask>
+            </variation>
+            <variation key="widthClass=compact">
+                <mask key="subviews">
+                    <include reference="euv-DF-mCi"/>
+                    <include reference="FMh-d5-OLv"/>
+                    <include reference="MA8-EC-C2S"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="36y-ai-Fpl"/>
+                    <include reference="MN5-xs-cme"/>
+                    <include reference="Qmp-HJ-SoP"/>
+                    <include reference="0ow-xF-N4A"/>
+                    <include reference="8x6-4E-2K8"/>
+                    <include reference="Rve-9n-5XT"/>
+                    <include reference="hQ0-hQ-fzA"/>
+                    <include reference="5R3-eU-Oy4"/>
+                    <include reference="ZxA-DD-ecS"/>
+                    <include reference="dpe-VO-jJO"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+</document>

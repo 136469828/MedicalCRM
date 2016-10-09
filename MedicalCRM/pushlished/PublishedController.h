@@ -11,9 +11,12 @@
 @interface PublishedController : UIViewController
 @property (nonatomic, copy) NSString *lat;
 @property (nonatomic, copy) NSString *lon;
+@property (nonatomic, copy) NSString *address;
 @property (weak, nonatomic) IBOutlet UIView *bgView;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
-@property (weak, nonatomic) IBOutlet UITextField *nameTextFild;
+@property (weak, nonatomic) IBOutlet UITextField *projectFild;
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextFild;
+@property (weak, nonatomic) IBOutlet UITextField *keshiTf;
 @property (weak, nonatomic) IBOutlet UIButton *colseCustom;
+@property (weak, nonatomic) IBOutlet UITextField *yiyuanTf;
 @end

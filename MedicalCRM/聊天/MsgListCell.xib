@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="102" id="KGk-i7-Jjw" customClass="MsgListCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <frame key="frameInset" width="320" height="89.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xiaomishuIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="0cc-d3-x6e">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="45" id="D9t-EL-gBI"/>
+                            <constraint firstAttribute="height" constant="45.5" id="vrd-Ax-QBp"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJW-K6-ALM">
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nqk-Ng-61t">
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lah-2g-zK1">
+                        <frame key="frameInset" minX="144" minY="12" width="42" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhY-vn-g5w">
+                        <frame key="frameInset" minX="144" minY="36" width="42" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogr-Tf-o99">
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4w-dn-wK2">
+                        <frame key="frameInset" minX="194" minY="38" width="42" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMr-mX-El5">
+                        <frame key="frameInset" minX="216" minY="24" width="42" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="AJW-K6-ALM" firstAttribute="top" secondItem="0cc-d3-x6e" secondAttribute="top" id="4mR-n0-YAg"/>
+                    <constraint firstItem="0cc-d3-x6e" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="5ZQ-qM-4vw"/>
+                    <constraint firstItem="0cc-d3-x6e" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="DdB-L8-YIK"/>
+                    <constraint firstItem="Nqk-Ng-61t" firstAttribute="leading" secondItem="AJW-K6-ALM" secondAttribute="leading" id="Ti9-a5-NpX"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="AJW-K6-ALM" secondAttribute="trailing" constant="4" id="c1H-Gk-iy8"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Nqk-Ng-61t" secondAttribute="trailing" constant="4" id="e2D-P9-KF9"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="ogr-Tf-o99" secondAttribute="trailing" constant="0.5" id="eL3-qQ-g5W"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="ogr-Tf-o99" secondAttribute="bottom" constant="0.5" id="tLW-ip-iiv"/>
+                    <constraint firstItem="Nqk-Ng-61t" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="27" id="tSL-0Q-St7"/>
+                    <constraint firstItem="Nqk-Ng-61t" firstAttribute="leading" secondItem="0cc-d3-x6e" secondAttribute="trailing" constant="8" id="twS-f7-spd"/>
+                    <constraint firstItem="AJW-K6-ALM" firstAttribute="leading" secondItem="0cc-d3-x6e" secondAttribute="trailing" constant="8" id="yKp-3K-xLM"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="IdLab" destination="a4w-dn-wK2" id="upS-Z0-Y2i"/>
+                <outlet property="contextLab" destination="Nqk-Ng-61t" id="tV3-Cq-n79"/>
+                <outlet property="msgImgV" destination="0cc-d3-x6e" id="bke-oW-fxR"/>
+                <outlet property="tabLab3" destination="YMr-mX-El5" id="rLX-7n-QGj"/>
+                <outlet property="tagLab1" destination="lah-2g-zK1" id="wAT-O4-K0R"/>
+                <outlet property="tagLab2" destination="IhY-vn-g5w" id="dum-6c-Jsx"/>
+                <outlet property="timeLab" destination="ogr-Tf-o99" id="n6I-t8-UpP"/>
+                <outlet property="titleLab" destination="AJW-K6-ALM" id="5FJ-3g-T1I"/>
+            </connections>
+            <point key="canvasLocation" x="284" y="344"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="xiaomishuIcon.png" width="78" height="78"/>
+    </resources>
+</document>

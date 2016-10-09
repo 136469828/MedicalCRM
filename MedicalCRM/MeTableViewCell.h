@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imgV;
 @property (weak, nonatomic) IBOutlet UILabel *nameLab;
 @property (weak, nonatomic) IBOutlet UILabel *phoneLab;
+@property (weak, nonatomic) IBOutlet UILabel *parkMentLab;
 @property (weak, nonatomic) IBOutlet UILabel *zhiwuLab;
 + (instancetype)selectedCell:(UITableView *)tableView;
 @end
